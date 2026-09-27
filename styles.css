@@ -602,11 +602,12 @@ a { color: inherit; }
   animation-name: drift-square;
 }
 
-/* Mobile (< 768px): dreizeilig, Formen klein neben der Headline und im Band unter der Pille.
-   Keine Form höher als eine Display-Zeile (≈ 61–65px bei 390px): alle ≤ 56px. */
+/* Mobile (< 768px): dreizeilig, Formen klein neben der Headline, nur Sky im Band neben der Pille.
+   Das Quadrat sitzt rechts neben „Stark“ (kurze erste Zeile), nicht unten: dort lief es auf kurzen
+   Handy-Bildschirmen unter die Pille. Keine Form höher als eine Display-Zeile: alle ≤ 56px. */
 .shape--coral  { --c: var(--coral);      --s: 56px; --a: 10px; --d: 420ms; --t: 11s; right: -16px; top: 100px; }
 .shape--ink    { --c: var(--ink);        --s: 18px; --a: 8px;  --d: 560ms; --t: 9s;  right: 130px; top: 160px; }
-.shape--square { --c: var(--brand-deep); --s: 36px; --a: 10px; --d: 640ms; --t: 12s; left: 32px;   bottom: 72px; }
+.shape--square { --c: var(--brand-deep); --s: 36px; --a: 10px; --d: 640ms; --t: 12s; right: 72px;  top: 52px; }
 .shape--sky    { --c: var(--sky);        --s: 56px; --a: 10px; --d: 720ms; --t: 13s; right: 64px;  bottom: 64px; }
 
 /* Tablet hochkant (768–899px): weiterhin dreizeilig, Formen skalieren mit der Display-Zeile */
