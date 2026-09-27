@@ -1460,6 +1460,19 @@ a { color: inherit; }
 @media (min-width: 768px) { .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
+/* Kartenraster mit Bild: Illustration steht auf der Karte und ragt über die obere Kante,
+   gleiche Mechanik wie die Angebotskarten der Startseite (.offer-art). Formen an die untere Kante. */
+.card-grid--art { padding-top: 56px; row-gap: 80px; }
+@media (min-width: 1024px) { .card-grid--art { row-gap: var(--space-3); } }
+.card-art {
+  display: block;
+  height: 152px; width: auto; max-width: 100%;
+  object-fit: contain; object-position: left bottom;
+  margin-top: calc(-1 * var(--card-pad) - 56px);
+  justify-self: start;
+}
+@media (min-width: 1024px) { .card-art { height: 168px; } }
+
 /* Text und Bild */
 .split { display: grid; gap: var(--space-6); align-items: center; margin-top: var(--space-6); }
 .split-text { display: grid; gap: var(--space-2); justify-items: start; max-width: 60ch; }
