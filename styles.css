@@ -1520,6 +1520,9 @@ a { color: inherit; }
   .section-head { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: var(--space-8); align-items: end; }
   .section-head .eyebrow { grid-column: 1 / -1; }
   .section-intro { margin: 0 0 6px; }
+  /* Gestapelt: Einleitung linksbündig direkt unter der Überschrift (z. B. „Gut zu wissen.“) */
+  .section-head--stack { grid-template-columns: minmax(0, 1fr); }
+  .section-head--stack .section-intro { margin: var(--space-2) 0 0; }
 }
 
 /* Kartenraster: 1 / 2 / 3 Spalten, Platz oben für Formen über der Kante */
