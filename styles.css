@@ -645,17 +645,13 @@ a { color: inherit; }
   .shape--sky    { right: 200px; bottom: 56px; }
 }
 
-/* Große Bildschirme (ab 1440px): Container und Hero wachsen in den Proportionen von 1440px weiter, statt bei
+/* Große Bildschirme (ab 1440px): der Hero wächst in den Proportionen von 1440px weiter, statt bei
    160px Schrift und 1280px Container stehen zu bleiben. Alles hängt an --display-xl (= 160px bei 1440),
    die Höhe begrenzt die Schrift, damit Titel, Text und Pille auch auf flachen Breitbildschirmen passen.
-   Schriftgrößen der Sektionen bleiben, nur ihre Breite wächst. */
+   Nur der Hero: die Sektionen darunter behalten Container und Schriftgrößen. */
 @media (min-width: 1440px) {
-  /* Container wächst mit (82 % der Breite, 1280–1920px): Rand links/rechts bleibt, nichts wirkt gequetscht.
-     Der Hero sitzt im selben Raster; seine Schrift passt „gegen Mobbing“ (≈ 7.45em) in die Containerbreite ein. */
-  :root {
-    --container: clamp(1280px, 82vw, 1920px);
-    --display-xl: min(11.12vw, 19svh, calc((var(--container) - 2 * var(--gutter)) / 7.45));
-  }
+  :root { --display-xl: min(11.12vw, 19svh); }
+  .hero-inner { max-width: none; padding-inline: 8.9vw; }
   .hero-sub { font-size: clamp(var(--text-body), 1.18vw, 30px); margin-top: calc(var(--display-xl) * .2); }
   .hero-actions { margin-top: calc(var(--display-xl) * .3); }
   .hero-actions .pill { font-size: clamp(var(--text-label), 1vw, 24px); padding: .8em 1.45em; }
