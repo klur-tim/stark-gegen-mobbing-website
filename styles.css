@@ -645,6 +645,23 @@ a { color: inherit; }
   .shape--sky    { right: 200px; bottom: 56px; }
 }
 
+/* Große Bildschirme (ab 1440px): der Hero wächst in den Proportionen von 1440px weiter, statt bei
+   160px Schrift und 1280px Container stehen zu bleiben. Alles hängt an --display-xl (= 160px bei 1440),
+   die Höhe begrenzt die Schrift, damit Titel, Text und Pille auch auf flachen Breitbildschirmen passen.
+   Nur der Hero: die Sektionen darunter behalten Container und Schriftgrößen. */
+@media (min-width: 1440px) {
+  :root { --display-xl: min(11.12vw, 19svh); }
+  .hero-inner { max-width: none; padding-inline: 8.9vw; }
+  .hero-sub { font-size: clamp(var(--text-body), 1.18vw, 30px); margin-top: calc(var(--display-xl) * .2); }
+  .hero-actions { margin-top: calc(var(--display-xl) * .3); }
+  .hero-actions .pill { font-size: clamp(var(--text-label), 1vw, 24px); padding: .8em 1.45em; }
+
+  .shape--coral  { top: calc(var(--display-xl) * .3); }
+  .shape--square { right: var(--display-xl); top: calc(var(--display-xl) * .8); }
+  .shape--ink    { right: calc(var(--display-xl) * .75); }
+  .shape--sky    { right: calc(var(--display-xl) * 1.25); bottom: calc(var(--display-xl) * .35); }
+}
+
 /* ---------- Marquee ---------- */
 /* Liegt ohne Linien auf dem Cream. Startet auf einer Wortgrenze am Seitenrand; die Kanten faden aus. */
 .marquee {
@@ -1544,7 +1561,7 @@ a { color: inherit; }
 @media (min-width: 900px) { .cta-band { grid-template-columns: minmax(0, 1fr) auto; align-items: end; padding: var(--space-8) var(--space-6); } }
 
 /* Fragen und Antworten: aufklappbar ohne JavaScript */
-.faq { display: grid; gap: var(--space-2); margin-top: var(--space-6); max-width: 820px; }
+.faq { display: grid; gap: var(--space-2); margin-top: var(--space-6); } /* volle Containerbreite wie das Aufruf-Band darunter */
 .faq details { background: var(--white); border-radius: var(--radius-card); padding: var(--space-3) var(--card-pad); }
 .faq summary {
   display: flex; justify-content: space-between; align-items: center; gap: var(--space-3);
