@@ -1551,6 +1551,7 @@ a { color: inherit; }
 /* Einspaltig (unter 900px): erste Sektion der Angebotsseiten zeigt die Grafik direkt nach dem Seitenkopf */
 @media (max-width: 899.98px) {
   .split--media-first-mobile .split-media { order: -1; }
+  .split--media-first-mobile { margin-top: 0; row-gap: var(--space-8); } /* weniger Luft über dem Bild, mehr darunter */
 }
 @media (min-width: 900px) {
   .split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-8); }
